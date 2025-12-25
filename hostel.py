@@ -1,4 +1,5 @@
 import sys
+
 def allocate_room(name,year,cgpa,distance):
     if cgpa>=8.5 and distance>=200:
         return "High Priority"
@@ -6,20 +7,23 @@ def allocate_room(name,year,cgpa,distance):
         return "Medium Priority"
     else:
         return "Low Priority"
-if len(sys.argv)>1:
-    data=sys.argv[1:]
-    name=data[0]
-    year=data[1]
-    cgpa=float(data[2])
-    distance=int(data[3])
+
+if len(sys.argv)==5:
+    name=sys.argv[1]
+    year=sys.argv[2]
+    cgpa=float(sys.argv[3])
+    distance=int(sys.argv[4])
 else:
-    name="lavanya"
-    year="3rd Year"
-    cgpa=8.9
-    distance=250
+    name="Anita"
+    year="2nd Year"
+    cgpa=8.2
+    distance=180
+
 priority=allocate_room(name,year,cgpa,distance)
-print(name)
-print(year)
-print(cgpa)
-print(distance)
-print(priority)
+
+print("\n--- Hostel Room Allocation Result ---")
+print("Student Name :",name)
+print("Year         :",year)
+print("CGPA         :",cgpa)
+print("Distance     :",distance)
+print("Priority     :",priority)
