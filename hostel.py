@@ -8,12 +8,18 @@ def allocate_room(name,year,cgpa,distance):
     else:
         return "Low Priority"
 
+use_args=False
 if len(sys.argv)==5:
-    name=sys.argv[1]
-    year=sys.argv[2]
-    cgpa=float(sys.argv[3])
-    distance=int(sys.argv[4])
-else:
+    try:
+        name=sys.argv[1]
+        year=sys.argv[2]
+        cgpa=float(sys.argv[3])
+        distance=int(sys.argv[4])
+        use_args=True
+    except:
+        use_args=False
+
+if not use_args:
     name="Anita"
     year="2nd Year"
     cgpa=8.2
