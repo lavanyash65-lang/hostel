@@ -1,4 +1,4 @@
-from hostel_allocation import hostel_info
+from hostel import hostel_info
 
 def test_default_hostel_info():
     expected_output = (
